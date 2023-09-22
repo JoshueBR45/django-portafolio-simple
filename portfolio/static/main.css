@@ -1,0 +1,23 @@
+body{
+    background: #090909;
+}
+
+.bg-black {
+    background: #000; 
+}
+
+.img-fixed-size {
+    width: 400px; /* Establece el ancho deseado */
+    height: 200px; /* Establece la altura deseada */
+    align-items: center;
+    object-fit: cover; /* Mantiene la relación de aspecto y recorta si es necesario */
+}
+
+.card-project:hover{
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+.card-body h2, .card-body a {
+    color: white;
+}

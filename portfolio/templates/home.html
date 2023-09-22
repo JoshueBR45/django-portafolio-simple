@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<header class="row bg-dark"> 
+   <div class="col-md-4">
+      <img src="{% static 'portfolio/ok.jpg' %}" alt="" width="390" height="415">
+   </div>
+
+   <div class="col-md-8 my-auto">
+      <h1> I am <strong>Joshue Bravo</strong></h1>
+      <h3>Soy un estudiande de quinto semestre que esta dispuesto a pasar la materia de base de datos </h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam veritatis iure maxime culpa aliquid 
+         eligendi facilis, id voluptates distinctio adipisci nulla architecto sint hic dignissimos. Molestias voluptates 
+         voluptate, magnam iste inventore totam. Accusamus dignissimos magnam provident dolor repellat soluta perspiciatis 
+         velit officia, accusantium deleniti necessitatibus aspernatur illo molestias expedita eligendi ea! Voluptatibus eum 
+         asperiores quibusdam quasi dignissimos repellendus minima illum ut suscipit. Harum quisquam, aspernatur atque alias 
+         nulla optio voluptatem molestiae soluta reprehenderit expedita nostrum similique autem iste, excepturi fuga! Voluptate 
+         tempora a libero, accusantium eveniet qui repellendus nesciunt perspiciatis dicta soluta mollitia unde quia laboriosam 
+         incidunt quod nam nobis.</p>
+         <a href="{% static '/portfolio/cv.pdf' %}" class="btn btn-primary btn-lg rounded-0 my-3">Download CV</a>
+   </div>
+</header>
+
+<div class="row my-4 text-center">
+   
+ <h3>My projects</h3>
+ <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eaque.</p>
+
+{% for project in projects %}
+<div class="col-md-4 p-4 ">
+   <div class="card bg-black card-project">
+      <img src="{{project.image.url}}" alt="{{project.title}}" class="img-fluid img-fixed-size"/>
+      <div class="card-body">
+         <h2 style="color: white;">{{project.title }}</h2>
+
+         <p style="color:white;">{{project.description}}</p>
+         
+         {% if project.url %}
+         <a href="{{project.url}}" 
+         class="btn btn-primary rounded-0 btn-sm" 
+         target="_blank"
+         > Mas Informacion
+
+         </a>
+
+         {% endif %} 
+      </div>
+   </div>
+</div>
+          
+{% endfor %}
+
+{% endblock %}
+</div>
+
+
